@@ -3,6 +3,8 @@ It allows you to add, edit, view, and delete companies, as well as manage employ
 The app also captures detailed employee information including skills and education, and displays this data in a clear, organized format.
 The entire application is based on HTML , CSS and JAVASCRIPT only. and local storage is used for storing data .
 
+Try yourself to find out : https://madhavgoel23.github.io/Companies-and-their-employees-management-system/
+
 Key Features:
 
 Company Management:
@@ -31,5 +33,3 @@ Frontend Technologies:
 HTML, CSS, JavaScript
 FontAwesome for icons
 Fully responsive and interactive UI
-
-Try yourself to find out : https://madhavgoel23.github.io/Companies-and-their-employees-management-system/
