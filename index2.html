@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Company & Employee Manager</title>
+    <link rel="stylesheet" href="styles2.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+    <div class="sidebar">
+        <button onclick="showPage('companyList')">Company List</button>
+        <button onclick="showPage('companyForm')">New Company</button>
+    </div>
+
+    <div class="content">
+        <!-- Company List -->
+        <div id="companyList" class="page">
+            <h2>Companies</h2>
+            <table id="companyTable">
+                <thead>
+                    <tr><th>Name</th><th>Email</th><th>Phone</th><th>Actions</th></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="companyMessage" class="confirmation"></div>
+        </div>
+
+        <!-- Company Form -->
+        <div id="companyForm" class="page" style="display:none;">
+            <h2>Add / Edit Company</h2>
+            <form id="formCompany">
+                <input type="text" name="name" placeholder="Company Name" required maxlength="50"/><br/>
+                <input type="text" name="address" placeholder="Address"/><br/>
+                <input type="email" name="email" placeholder="Email" required maxlength="100"/><br/>
+                <input type="text" name="phone" placeholder="Phone" required maxlength="15"/><br/>
+                <button type="submit">Save</button>
+            </form>
+            <div id="companyFormMessage" class="confirmation"></div>
+        </div>
+
+        <!-- Employee List -->
+        <div id="employeeList" class="page" style="display:none;">
+            <h2>Employees of <span id="employeeCompanyName"></span></h2>
+            <button onclick="showPage('employeeForm')">Add Employee</button>
+            <table id="employeeTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Designation</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Skills</th>
+                        <th>Education</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div id="employeeMessage" class="confirmation"></div>
+        </div>
+
+        <!-- Employee Form -->
+        <div id="employeeForm" class="page" style="display:none;">
+            <h2>Add / Edit Employee</h2>
+            <form id="formEmployee">
+                <input type="text" name="name" placeholder="Employee Name" required maxlength="25"/><br/>
+                <select name="designation" required>
+                    <option value="">Select Designation</option>
+                    <option value="Developer">Developer</option>
+                    <option value="Manager">Manager</option>
+                    <option value="System Admin">System Admin</option>
+                    <option value="Team Lead">Team Lead</option>
+                    <option value="PM">PM</option>
+                </select><br/>
+                <input type="date" name="join_date" required /><br/>
+                <input type="email" name="email" placeholder="Email" required maxlength="100"/><br/>
+                <input type="text" name="phone" placeholder="Phone" required maxlength="15"/><br/>
+
+                <!-- Skills Info Block -->
+                <h3>Skills</h3>
+                <div id="skillsContainer"></div>
+                <button type="button" onclick="addSkill()">Add Skill</button><br/>
+
+                <!-- Education Info Block -->
+                <h3>Education</h3>
+                <div id="educationContainer"></div>
+                <button type="button" onclick="addEducation()">Add Education</button><br/>
+
+                <button type="submit">Save</button>
+            </form>
+            <div id="employeeFormMessage" class="confirmation"></div>
+        </div>
+    </div>
+
+    <script src="script2.js"></script>
+</body>
+</html>
